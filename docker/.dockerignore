@@ -1,0 +1,10 @@
+**
+!setup.py
+!src
+src/*.egg-info
+!Makefile*
+!docker
+!docker/dependencies-apt.txt
+!requirements*
+!scenarios
+!.compmake.rc

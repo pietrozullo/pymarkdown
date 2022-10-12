@@ -29,13 +29,13 @@ This is a text input
 ---
 ![Test for alternative text](./non_existent_image.png 'Non existent image')
 ---
-'''python
+```python
     #This is python syntax 
     a = 6 
     b = 5 
     a+b = 11 
     def sum(a,b): 
-    return a+b 
-'''
+        return a+b 
+```
 ---
 > This is a blockquote

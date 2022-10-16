@@ -40,6 +40,10 @@ setup(
     package_dir={"": src},
     packages=[module],
     version=version,
+    license= 'MIT',
+    author= 'Pietro Zullo',
+    url = 'https://github.com/pietrozullo/pymarkdown',
+    download_url = '',
     zip_safe=False,
     entry_points={
         "console_scripts": [

@@ -83,4 +83,4 @@ def test_mdreport():
     report.save("./report.md")
 
 if __name__ == "__main__":
-    test_mdreport()
+    pass

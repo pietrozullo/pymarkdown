@@ -21,13 +21,6 @@ def get_version(filename):
     return version
 
 
-def _parse_requirements(filename: str) -> List[str]:
-    """Return requirements from requirements file."""
-    return distutils.text_file.TextFile(filename=str(Path(__file__).with_name(filename))).readlines()
-
-
-install_requires = _parse_requirements("requirements.txt")
-
 module = "pymarkdownreport"
 package = "pymarkdownreport"
 src = "pymarkdownreport"
@@ -41,12 +34,11 @@ setup(
     license= 'MIT',
     author= 'Pietro Zullo',
     url = 'https://github.com/pietrozullo/pymarkdownreport',
-    download_url = 'https://github.com/pietrozullo/pymarkdownreport/archive/refs/tags/v0.0.1.tar.gz',
+    download_url = 'https://github.com/pietrozullo/pymarkdownreport/archive/refs/tags/v0.0.2.tar.gz',
     zip_safe=False,
     entry_points={
         "console_scripts": [
         ]
     },
     python_requires=">=3.8",  
-    install_requires=install_requires,
 )

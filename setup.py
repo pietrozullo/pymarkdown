@@ -27,29 +27,26 @@ def _parse_requirements(filename: str) -> List[str]:
 
 
 install_requires = _parse_requirements("requirements.txt")
-extras_require = {"all": _parse_requirements("requirements-extra.txt")}
 
-module = "pymarkdown"
-package = "pymarkdown"
-src = "pymarkdown"
+module = "pymarkdownreport"
+package = "pymarkdownreport"
+src = "pymarkdownreport"
 
-version = get_version(filename=f"src/{module}/__init__.py")
+version = get_version(filename=f"{module}/__init__.py")
 
 setup(
     name=package,
-    package_dir={"": src},
     packages=[module],
     version=version,
     license= 'MIT',
     author= 'Pietro Zullo',
     url = 'https://github.com/pietrozullo/pymarkdown',
-    download_url = '',
+    download_url = 'https://github.com/pietrozullo/pymarkdown/archive/refs/tags/v0.0.1.tar.gz',
     zip_safe=False,
     entry_points={
         "console_scripts": [
         ]
     },
-    python_requires=">=3.8",  # todo add <3.10
+    python_requires=">=3.8",  
     install_requires=install_requires,
-    extras_require=extras_require,
 )

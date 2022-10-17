@@ -23,7 +23,7 @@ def test_mdreport():
     report.horizontal_rule()
     report.image("./non_existent_image.png","Non existent image","Test for alternative text")
     report.horizontal_rule()
-    report.code_block("python","#This is python syntax \n a = 6 \n b = 5 \n a+b = 11 \n def sum(a,b): \n    return a+b")
+    report.code_block("python","This is python syntax \n a = 6 \n b = 5 \n a+b = 11 \n def sum(a,b): \n    return a+b")
     report.horizontal_rule()
     report.blockquote("This is a blockquote")
     table, ax = report.table(3)

@@ -39,7 +39,7 @@ class MDReport():
         self.report += f"![{alt_text}]({source} '{title}')\n"
     
     def code_block(self, language:str, text:str):
-        self.report += f"'''{language}\n {text} \n'''\n"
+        self.report += f"```{language}\n {text} \n```\n"
 
     def blockquote(self, text:str):
         self.report += f"> {text}\n"

@@ -1,5 +1,4 @@
-
-
+from typing import Tuple
 class MDReport():
     """This class implements a mardown report generator
     """
@@ -51,36 +50,52 @@ class MDReport():
     def save(self, filepath:str):
         with open(filepath,'w') as f:
             f.write(self.report)
+    
+    def table(self, width: int):
+        table: MDTable = MDTable(width)
+        return table, table.tables
+
+    def draw_table(self, table):
+        self.report += "\n"
+        self.report += table.draw() 
+
+class MDTable(MDReport):
+    """This class is used to create tables"""
+
+    def __init__(self, width:int): 
+        self.report = ""
+        self.single_table: MDTableElement = MDTableElement()
+        self.tables: Tuple[MDTableElement] = ()
+
+        for i in range(0,width):
+            single_table: MDTableElement = MDTableElement()
+            self.tables += (single_table,) 
+    
+    def draw(self) -> str:
+        table:str = "|" 
+        for _table in self.tables: 
+            # write headers
+            table += f"{_table.header}|"
+        table += "\n|"
+        for _table in self.tables: 
+            # write headers
+            table += f"---|"
+        table += "\n|"
+        for _table in self.tables: 
+            # write content
+            report = _table.report.replace("\n","<br />")
+            table += f"{report}|"
+
+        return table
 
 
+class MDTableElement(MDReport): 
+    """Class to wrap a single element of a table. 
+    """
+    def __init__(self):
+        self.header: str = ""
+        self.report:str = ""
 
-
-def test_mdreport():
-    report = MDReport("Test Report") 
-    report.H1("This is a test report for H1")
-    report.H2("This is a test report for H2")
-    report.H3("This is a test report for H3")
-    report.horizontal_rule()
-    report.text("This is a text input")
-    report.horizontal_rule()
-    report.bold("This is bold text")
-    report.horizontal_rule()
-    report.italic("This is italic text")
-    report.horizontal_rule()
-    report.bullet_points("This", "Is", "Test", "For", "Bullet", "Points")
-    report.horizontal_rule()
-    report.numbered_list("This", "Is", "Test", "For", "Numbered", "List")
-    report.horizontal_rule()
-    report.link("This is a link", "https://www.google.com/") 
-    report.horizontal_rule()
-    report.image("./image.png","Test Image")
-    report.horizontal_rule()
-    report.image("./non_existent_image.png","Non existent image","Test for alternative text")
-    report.horizontal_rule()
-    report.code_block("python","#This is python syntax \n a = 6 \n b = 5 \n a+b = 11 \n def sum(a,b): \n    return a+b")
-    report.horizontal_rule()
-    report.blockquote("This is a blockquote")
-    report.save("./report.md")
 
 if __name__ == "__main__":
     pass

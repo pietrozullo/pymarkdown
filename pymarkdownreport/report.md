@@ -29,13 +29,17 @@ This is a text input
 ---
 ![Test for alternative text](./non_existent_image.png 'Non existent image')
 ---
-```python
-    #This is python syntax 
-    a = 6 
-    b = 5 
-    a+b = 11 
-    def sum(a,b): 
-        return a+b 
-```
+'''python
+ #This is python syntax 
+ a = 6 
+ b = 5 
+ a+b = 11 
+ def sum(a,b): 
+    return a+b 
+'''
 ---
 > This is a blockquote
+
+|Text|Image1|Image2|
+|---|---|---|
+|*This is some italic in a table we line break it*<br />This is a very long text aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br />* This<br />* Is<br />* Test<br />* For<br />* Bullet<br />* Points<br />---<br />|This is the firts image.<br />![alt text](./image.png 'This is an image in a table')<br />|This is the second image<br />![alt text](./image.png 'This is an image in a table')<br />|

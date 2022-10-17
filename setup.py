@@ -34,7 +34,7 @@ setup(
     license= 'MIT',
     author= 'Pietro Zullo',
     url = 'https://github.com/pietrozullo/pymarkdownreport',
-    download_url = 'https://github.com/pietrozullo/pymarkdownreport/archive/refs/tags/v0.0.2.tar.gz',
+    download_url = 'https://github.com/pietrozullo/pymarkdownreport/archive/refs/tags/v0.0.3.tar.gz',
     zip_safe=False,
     entry_points={
         "console_scripts": [
